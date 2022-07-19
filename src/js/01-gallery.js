@@ -8,45 +8,32 @@ import { galleryItems } from './gallery-items';
 
 console.log(galleryItems);
 
-/ Створюємо шаблонний рядочок!
-const galleryOfImg = ({ preview, original, description }) =>
-    `    
-   <div class="gallery__item">
-  <a class="gallery__link" href="${original}">
-    <img
-      class="gallery__image"
-      src="${preview}"
-      data-source="${original}"
-      alt="${description}"
-    />
-  </a>
-</div>`;
+import { galleryItems } from './gallery-items.js';
+// Change code below this line
 
-// Створюємо акумулятор
-const galleryMarkup = galleryItems.reduce((acc, img) => acc + galleryOfImg(img), "");
-//Шукаємо  class = gallery
-const galleryList = document.querySelector('.gallery');
-//Додаємо шаблоні рядки
-galleryList.insertAdjacentHTML("afterbegin", galleryMarkup);
-//Делегування кліків
-const gallery = document.querySelector('.gallery');
-gallery.addEventListener('click', onclick);
+const gallery = document.querySelector(".gallery");
 
-function onclick(event) {
-    if (event.target.nodeName !== 'IMG') {
-        return;
-    }
-    event.preventDefault();
-    const modal = basicLightbox.create(`
-            <img src="${event.target.dataset.source}" width="800" height="600">
-        `).show()
+const imagesList = createGallery(galleryItems);
 
-    document.addEventListener("keydown", onEscClick);
-    function onEscClick(event) {
-        if (event.code === "Escape") {
-            modal.close();
-            document.removeEventListener("keydown", onEscClick);
-        }
-    }
-};
+gallery.insertAdjacentHTML("beforeend", imagesList);
 
+function createGallery(images) {
+    return galleryItems.map(({ preview, original, description }) => {
+        return ` <a class="gallery__item"
+    href="${original}">
+    <img class="gallery__image" 
+    src="${preview}" 
+    alt="${description}" />
+    </a>`;
+    })
+        .join("")
+}
+const galleryIcon = new SimpleLightbox(".gallery a", {
+    captionsData: "alt",
+    // docClose: false,
+    // close : false,
+    captionDelay: 450,
+    animationSpeed: 400,
+    maxZoom: 4,
+    // disableScroll : false,
+});
