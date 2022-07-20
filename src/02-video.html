@@ -21,24 +21,6 @@
     ></iframe>
 
     <script src="https://player.vimeo.com/api/player.js"></script>
-
-    <script>
-            const iframe = document.querySelector('iframe');
-            const player = new Vimeo.Player(iframe);
-
-            player.on('timeupdate', function (timeupdate) {
-              if( window.localStorage ){
-       // додавання значення
-       localStorage["key"] = "timeupdate";
-      //отримання значення по ключу
-      localStorage["key"];
-              console.log('played the video! - ', key);
-            });
-
-            player.getVideoTitle().then(function (title) {
-              console.log('title:', title);
-            });
-    </script>
     <script src="js/02-video.js" type="module"></script>
   </body>
 </html>
