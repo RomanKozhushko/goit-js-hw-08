@@ -14,7 +14,7 @@ import throttle from "lodash.throttle";
           
 const secondOfReload = timeReload.seconds;
         
-player.setCurrentTime(secondOfReload).then(function(secondOfReload) {
+player.setCurrentTime(secondOfReload).then(function(seconds) {
     // seconds = the actual time that the player seeked to
 }).catch(function(error) {
     switch (error.name) {
@@ -27,9 +27,3 @@ player.setCurrentTime(secondOfReload).then(function(secondOfReload) {
     }
 });
        
-//         document.addEventListener(
-//   "scroll",
-//   _.throttle(() => {
-//     console.log("Scroll handler call every 300ms");
-//   }, 300)
-// );
