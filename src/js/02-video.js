@@ -11,6 +11,13 @@
           
          const secondOfReload = timeReload.seconds;
           console.log(secondOfReload);
-                    
+
+         document.addEventListener("DOMContentLoaded", () => {
+          window.addEventListener("DOMContentLoaded", reload)
+          const reload = player.setCurrentTime(secondOfReload);
+  });
+        
+        
 })
-     
+
+
