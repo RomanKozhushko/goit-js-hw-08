@@ -9,8 +9,13 @@
           const timePoint = localStorage.getItem('timePoint')
           const timeReload = JSON.parse(timePoint);
           
-          const secondOfReload = timeReload.seconds;
+         const secondOfReload = timeReload.seconds;
           console.log(secondOfReload);
-      });
 
-       window.addEventListener('storage', event => {})
+          
+          
+          
+})
+     
+
+   
