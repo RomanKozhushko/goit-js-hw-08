@@ -3,11 +3,14 @@
       const player = new Vimeo.Player(iframe);
 
       player.on('timeupdate', function (timeupdate) {
-        const timeControl = timeupdate;
+          let timeControl = timeupdate;
+          localStorage.setItem('timePoint', JSON.stringify(timeControl))
 
-        console.log(timeControl );
+          const timePoint = localStorage.getItem('timePoint')
+          const timeReload = JSON.parse(timePoint);
+          
+          const secondOfReload = timeReload.seconds;
+          console.log(secondOfReload);
       });
 
-        player.getVideoTitle().then(function (title) {
-        console.log('title:', title);
-      });
+       window.addEventListener('storage', event => {})
