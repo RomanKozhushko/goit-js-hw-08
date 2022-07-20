@@ -11,11 +11,6 @@
           
          const secondOfReload = timeReload.seconds;
           console.log(secondOfReload);
-
-          
-          
-          
+                    
 })
      
-
-   
