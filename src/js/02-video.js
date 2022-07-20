@@ -5,8 +5,8 @@
 
       player.on('timeupdate', function (timeupdate) {
           let timeControl = timeupdate;
-          localStorage.setItem('LOCALSTORAGE_KEY', JSON.stringify(timeControl))
-            
+        localStorage.setItem('LOCALSTORAGE_KEY', JSON.stringify(timeControl));
+        
       });      
   
         const timePoint = localStorage.getItem('LOCALSTORAGE_KEY')
@@ -28,4 +28,9 @@ player.setCurrentTime(secondOfReload).then(function(seconds) {
     }
 });
        
-        
+//         document.addEventListener(
+//   "scroll",
+//   _.throttle(() => {
+//     console.log("Scroll handler call every 300ms");
+//   }, 300)
+// );
