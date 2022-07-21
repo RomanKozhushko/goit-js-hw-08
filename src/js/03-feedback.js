@@ -15,11 +15,9 @@ function inputItem(event) {
 window.addEventListener('DOMContentLoaded', updateOutput);
 
 function updateOutput() {
-  const parseMail = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).email;
-  const parseMessage = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).message;
-    email.value = parseMail;
-    message.value = parseMessage;
-};
+   email.value = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).email;
+  message.value = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).message;
+    };
 
  // 3. Під час сабміту форми очищуй сховище і поля форми,
  // а також виводь у консоль об'єкт з полями email, message та їхніми поточними значеннями.
