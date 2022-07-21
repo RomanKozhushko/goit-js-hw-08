@@ -12,18 +12,13 @@ function saveItem(event) {
   const email = form.elements.email.value;
   const message = form.elements.message.value;
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify({ email, message }));
-
+  form.reset();
 }
 
 
-   
-//    
-//   updateOutput();
-//   form.reset();
-// }
+updateOutput();   
 
-
-// function updateOutput() {
-//   output.textContent = localStorage.getItem(LOCALSTORAGE_KEY) || "";
-// }
-    
+function updateOutput() {
+  output.email = localStorage.getItem(LOCALSTORAGE_KEY) || "";
+  output.message = localStorage.getItem(LOCALSTORAGE_KEY) || "";
+}
