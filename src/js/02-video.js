@@ -5,10 +5,12 @@ const player = new Vimeo.Player(iframe);
 const LOCALSTORAGE_KEY = "videoplayer-current-time";
 
 
-      player.on('timeupdate', function (timeupdate) {
-       //1. записуємо таймінг у локал сторидж!
-        localStorage.setItem('LOCALSTORAGE_KEY', JSON.stringify(timeupdate));
-      });   
+player.on('timeupdate', throttle(function (timeupdate) {
+let timeControl = timeupdate;
+            //1. записуємо таймінг у локал сторидж!
+    localStorage.setItem('LOCALSTORAGE_KEY', JSON.stringify(timeControl));
+      }, 1000));
+        
       // 2. Забираємо дані з локат сториджа
 const timePoint = localStorage.getItem('LOCALSTORAGE_KEY');
       // 3. Парсимо СТРІНГ у числові значення
