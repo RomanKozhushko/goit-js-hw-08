@@ -5,20 +5,21 @@ const LOCALSTORAGE_KEY = "feedback-form-state";
 
 
 
-form.addEventListener("submit", saveItem);
-
-function saveItem(event) {
-  event.preventDefault();
   const email = form.elements.email.value;
   const message = form.elements.message.value;
-  localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify({ email, message }));
+localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify({ email, message }));
+
+form.addEventListener("submit", saveItem);  
+function saveItem(event) {
+  event.preventDefault();
   form.reset();
 }
 
 
-updateOutput();   
+// updateOutput();   
+window.addEventListener('DOMContentLoaded', updateOutput);
+function updateOutput(event) {
+  form.elements.email.value = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).email;
+  form.elements.message.value = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).message;
 
-function updateOutput() {
-  output.email = localStorage.getItem(LOCALSTORAGE_KEY) || "";
-  output.message = localStorage.getItem(LOCALSTORAGE_KEY) || "";
 }
