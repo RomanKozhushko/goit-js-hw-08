@@ -21,8 +21,8 @@
     // Порпередження перезавантаження!
   event.preventDefault();
   const formSubmit = {
-        email : event.currentTarget.email.value,
-        message : event.currentTarget.message.value,
+        email: event.currentTarget.email.value,
+        message: event.currentTarget.message.value,
   }
     // Виведення в консоль масиву даних з локал сториджу
         console.log(formSubmit)
