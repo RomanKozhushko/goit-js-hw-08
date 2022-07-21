@@ -10,13 +10,13 @@ function inputItem(event) {
   const email = event.currentTarget.email.value;
   const message = event.currentTarget.message.value;
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify({ email, message }));
-  console.log(email);
+  
 }
 window.addEventListener('DOMContentLoaded', updateOutput);
 
 function updateOutput() {
-   email.value = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).email;
-  message.value = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).message;
+   email.value == JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).email;
+  message.value == JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).message;
     };
 
  // 3. Під час сабміту форми очищуй сховище і поля форми,
