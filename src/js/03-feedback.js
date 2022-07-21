@@ -2,19 +2,20 @@
   const form = document.querySelector(".feedback-form");
   const LOCALSTORAGE_KEY = "feedback-form-state";
 
-
   // Форма введення
   const formInput = {
         email: form.email.value,
         message: form.message.value,
-  };
+};
+  
   // 1. Відстежую на формі подію input, і щоразу записую у локальне сховище об'єкт з полями email і message, та встановлюємо ТРОТТТЛ!!
   form.addEventListener("input", throttle(onInput, 500));
   function onInput (event) {
         formInput[event.target.name] = event.target.value
     // console.log(formInput);
         localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(formInput));
-  }
+}
+  
   // 3. Сабміт - 
   form.addEventListener("submit", onSubmit);
   function onSubmit(event) {
@@ -25,11 +26,13 @@
         message: event.currentTarget.message.value,
   }
     // Виведення в консоль масиву даних з локал сториджу
-        console.log(formSubmit)
+    console.log(formSubmit)
+    
     // 4. Видалення ключа зберігання даних
         localStorage.removeItem(LOCALSTORAGE_KEY);
         form.reset();
-  }
+}
+  
   //Заповнення форми після перезаванаження, якщо є дані в Локал сториджі
   window.addEventListener('DOMContentLoaded', updateOutput);
   function updateOutput() {
