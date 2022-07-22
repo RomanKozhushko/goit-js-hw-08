@@ -18,16 +18,4 @@ const timeReload = JSON.parse(timePoint);
       // 4. Витягуємо значення часу для перезапуску плеєра.
 const secondOfReload = timeReload.seconds;
       // 5. Запускаємо плеєр у визначений час
-      player.setCurrentTime(secondOfReload).then(function(seconds) {
-          // seconds = the actual time that the player seeked to
-      }).catch(function(error) {
-          switch (error.name) {
-              case 'RangeError':
-                  // the time was less than 0 or greater than the video’s duration
-                  break;
-              default:
-                  // some other error occurred
-                  break;
-          }
-      });
-       
+player.setCurrentTime(secondOfReload);
