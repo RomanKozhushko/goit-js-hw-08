@@ -57,7 +57,7 @@ function onSubmit(event) {
   const localInput = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
     // перевірка наявності даних у локал сториджа!
         if (!localInput) return;
-        email.value = localInput.email;
+        email.vcalInput.email;
 
 
 
