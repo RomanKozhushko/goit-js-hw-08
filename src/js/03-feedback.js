@@ -58,8 +58,7 @@ function onSubmit(event) {
     // перевірка наявності даних у локал сториджа!
         if (!localInput) return;
         email.value = localInput.email;
-        message.value = localInput.message;
-}
+
 
 
 
