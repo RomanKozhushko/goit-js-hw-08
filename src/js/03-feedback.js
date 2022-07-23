@@ -51,9 +51,6 @@ function onSubmit(event) {
 
 
 
-  //Заповнення форми після перезаванаження, якщо є дані в Локал сториджі
-  window.addEventListener('DOMContentLoaded', updateOutput);
-  functio
 
 
 
