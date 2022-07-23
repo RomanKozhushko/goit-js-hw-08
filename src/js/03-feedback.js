@@ -51,6 +51,16 @@ function onSubmit(event) {
 
 
 
+  //Заповнення форми після перезаванаження, якщо є дані в Локал сториджі
+  window.addEventListener('DOMContentLoaded', updateOutput);
+  function updateOutput() {
+  const localInput = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+    // перевірка наявності даних у локал сториджа!
+        if (!localInput) return;
+        email.value = localInput.email;
+        message.value = localInput.message;
+}
+
 
 
 
