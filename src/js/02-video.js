@@ -19,3 +19,11 @@ const timeReload = JSON.parse(timePoint);
 const secondOfReload = timeReload.seconds;
       // 5. Запускаємо плеєр у визначений час
 player.setCurrentTime(secondOfReload);
+
+
+    // 3. Парсимо СТРІНГ у числові значення
+const timeReload = JSON.parse(timePoint);
+      // 4. Витягуємо значення часу для перезапуску плеєра.
+const secondOfReload = timeReload.seconds;
+      // 5. Запускаємо плеєр у визначений час
+player.setCurrentTime(secondOfReload);
