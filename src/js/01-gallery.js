@@ -6,13 +6,10 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 import { galleryItems } from './gallery-items';
 
 
-console.log(galleryItems);
 
 import { galleryItems } from './gallery-items.js';
 
-
 const gallery = document.querySelector(".gallery");
-
 const imagesList = createGallery(galleryItems);
 
 gallery.insertAdjacentHTML("beforeend", imagesList);
