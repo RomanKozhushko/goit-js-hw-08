@@ -9,7 +9,7 @@ import { galleryItems } from './gallery-items';
 console.log(galleryItems);
 
 import { galleryItems } from './gallery-items.js';
-// Change code below this line
+
 
 const gallery = document.querySelector(".gallery");
 
